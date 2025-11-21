@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastreabilidade Industrial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <!-- BOTÃO DE VOLTAR ADICIONADO -->
+    <button id="voltarBtn" class="btn-secondary">← Voltar</button>
+
+    <h1>Rastreabilidade Industrial</h1>
+
+    <div class="statusBox">
+      <span id="statusDot" class="dot yellow"></span>
+      <span id="statusText">Não conectado</span>
+    </div>
+
+    <button id="connectBtn" class="btn-primary">Conectar MetaMask</button>
+  </header>
+
+  <main class="container">
+
+    <!-- COLUNA ESQUERDA – FORMULÁRIO -->
+    <section class="card">
+      <h2>Registrar Manutenção</h2>
+
+      <label>Tipo de Manutenção</label>
+      <select id="descricao">
+        <option value="" disabled selected>Selecione...</option>
+        <option value="Troca de Filtro">Troca de Filtro</option>
+        <option value="Lubrificação de Engrenagens">Lubrificação de Engrenagens</option>
+        <option value="Aperto de Parafusos">Aperto de Parafusos</option>
+        <option value="Calibração de Sensores">Calibração de Sensores</option>
+        <option value="Limpeza Técnica">Limpeza Técnica</option>
+        <option value="Inspeção Preventiva">Inspeção Preventiva</option>
+        <option value="Substituição de Peças">Substituição de Peças</option>
+        <option value="Teste de Segurança">Teste de Segurança</option>
+      </select>
+
+      <label>Data</label>
+      <input type="date" id="data">
+
+      <label>Prioridade</label>
+      <select id="prioridade">
+        <option value="Baixa">Baixa</option>
+        <option value="Média">Média</option>
+        <option value="Alta">Alta</option>
+      </select>
+
+      <button id="registrarBtn" class="btn-success">Registrar</button>
+    </section>
+
+    <!-- COLUNA DIREITA – LISTAGEM -->
+    <section class="card">
+      <h2>Manutenções Registradas</h2>
+      <button id="listarBtn" class="btn-secondary">Atualizar Lista</button>
+
+      <!-- CONTAINER COM SCROLL -->
+      <div class="lista-container">
+        <div id="lista" class="lista-cards"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.6.0/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+/* ==========================
+   1. ESTILO GERAL
+========================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #333;
+}
+
+/* ==========================
+   2. TOPO / TOPBAR
+========================== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111827;
+  color: white;
+  padding: 15px 30px;
+}
+
+/* STATUS (dentro da topbar) */
+.statusBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.dot.yellow {
+  background: #ffcc00;
+}
+.dot.green {
+  background: #00cc66;
+}
+
+/* ==========================
+   3. LAYOUT PRINCIPAL
+========================== */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  padding: 30px;
+}
+
+/* ==========================
+   4. CARDS PRINCIPAIS
+========================== */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* ==========================
+   5. INPUTS E CAMPOS
+========================== */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Ajuste especial para data */
+input[type="date"] {
+  max-width: 260px;
+}
+
+/* ==========================
+   6. BOTÕES
+========================== */
+button {
+  cursor: pointer;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+/* Botão de voltar */
+.btn-back {
+  background: #374151; /* cinza escuro elegante */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-back:hover {
+  background: #4b5563;
+  transform: translateX(-2px);
+}
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+.btn-primary:hover {
+  background: #1e40af;
+}
+
+.btn-success {
+  background: #059669;
+  color: white;
+}
+.btn-success:hover {
+  background: #047857;
+}
+
+.btn-secondary {
+  background: #c77700;
+  color: white;
+}
+.btn-secondary:hover {
+  background: #8a5400;
+}
+
+/* ==========================
+   7. LISTA DE MANUTENÇÕES
+========================== */
+
+/* Área com scroll */
+.lista-container {
+  max-height: 420px;
+  overflow-y: auto;
+  margin-top: 15px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+/* Cards verticais */
+.lista-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Card individual */
+.card-item {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Título do card */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Data */
+.card-date {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.baixa {
+  background: #2d7d46;
+}
+.badge.média {
+  background: #c7a400;
+}
+.badge.alta {
+  background: #c0392b;
+}
+
+/* ==========================
+   8. SCROLLBAR PERSONALIZADA
+========================== */
+.lista-container {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.lista-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-container::-webkit-scrollbar-track {
+  background: #d4d4d4;
+  border-radius: 10px;
+}
+
+.lista-container::-webkit-scrollbar-thumb {
+  background: #7a7a7a;
+  border-radius: 10px;
+}
+
+.lista-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ==========================
+   9. TELA DE LOGIN
+========================== */
+
+/* Centralização */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+/* Card de login */
+.login-card {
+  width: 350px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs login */
+.login-card input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 15px;
+}
+
+.login-card input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Botões */
+.full-width {
+  width: 100%;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,152 @@
+{
+  "address": "0x3206329c804FdAAe82862926f7a5e662d8b6A33E",
+  "network": "sepolia",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "descricao",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "prioridade",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "nomeOperador",
+          "type": "string"
+        }
+      ],
+      "name": "ManutencaoRegistrada",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "listarManutencao",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "descricao",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "prioridade",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "nomeOperador",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "manutencoes",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "descricao",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "prioridade",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "nomeOperador",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "descricao",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "data",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "prioridade",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "nomeOperador",
+          "type": "string"
+        }
+      ],
+      "name": "registrar",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalManutencoes",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}
