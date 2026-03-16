@@ -2,39 +2,54 @@
 pragma solidity ^0.8.20;
 
 contract RegistroManutencao {
+
     struct Manutencao {
+        uint256 id;
+        string maquina;
         string descricao;
-        uint256 data;
         string prioridade;
-        string nomeOperador; // nome salvo no momento do registro
+        string operador;
+        uint256 timestamp;
     }
 
-    Manutencao[] public manutencoes;
+    Manutencao[] private manutencoes;
 
     event ManutencaoRegistrada(
-        uint256 index,
+        uint256 id,
+        string maquina,
         string descricao,
-        uint256 data,
         string prioridade,
-        string nomeOperador
+        string operador,
+        uint256 timestamp
     );
 
-    function registrar(
-        string memory descricao,
-        uint256 data,
-        string memory prioridade,
-        string memory nomeOperador
+    function registrarManutencao(
+        string memory _maquina,
+        string memory _descricao,
+        string memory _prioridade,
+        string memory _operador
     ) public {
-        manutencoes.push(
-            Manutencao(descricao, data, prioridade, nomeOperador)
+
+        uint256 id = manutencoes.length;
+
+        Manutencao memory novaManutencao = Manutencao(
+            id,
+            _maquina,
+            _descricao,
+            _prioridade,
+            _operador,
+            block.timestamp
         );
 
+        manutencoes.push(novaManutencao);
+
         emit ManutencaoRegistrada(
-            manutencoes.length - 1,
-            descricao,
-            data,
-            prioridade,
-            nomeOperador
+            id,
+            _maquina,
+            _descricao,
+            _prioridade,
+            _operador,
+            block.timestamp
         );
     }
 
@@ -42,14 +57,24 @@ contract RegistroManutencao {
         public
         view
         returns (
+            uint256 id,
+            string memory maquina,
             string memory descricao,
-            uint256 data,
             string memory prioridade,
-            string memory nomeOperador
+            string memory operador,
+            uint256 timestamp
         )
     {
         Manutencao memory m = manutencoes[index];
-        return (m.descricao, m.data, m.prioridade, m.nomeOperador);
+
+        return (
+            m.id,
+            m.maquina,
+            m.descricao,
+            m.prioridade,
+            m.operador,
+            m.timestamp
+        );
     }
 
     function totalManutencoes() public view returns (uint256) {

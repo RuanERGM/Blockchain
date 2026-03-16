@@ -1,5 +1,5 @@
 {
-  "address": "0x3206329c804FdAAe82862926f7a5e662d8b6A33E",
+  "address": "0xB93b7Ae164d0E1D77854CA3c3884624f271AC076",
   "network": "sepolia",
   "abi": [
     {
@@ -8,20 +8,20 @@
         {
           "indexed": false,
           "internalType": "uint256",
-          "name": "index",
+          "name": "id",
           "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "maquina",
+          "type": "string"
         },
         {
           "indexed": false,
           "internalType": "string",
           "name": "descricao",
           "type": "string"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "data",
-          "type": "uint256"
         },
         {
           "indexed": false,
@@ -32,8 +32,14 @@
         {
           "indexed": false,
           "internalType": "string",
-          "name": "nomeOperador",
+          "name": "operador",
           "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
         }
       ],
       "name": "ManutencaoRegistrada",
@@ -50,14 +56,19 @@
       "name": "listarManutencao",
       "outputs": [
         {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
           "internalType": "string",
-          "name": "descricao",
+          "name": "maquina",
           "type": "string"
         },
         {
-          "internalType": "uint256",
-          "name": "data",
-          "type": "uint256"
+          "internalType": "string",
+          "name": "descricao",
+          "type": "string"
         },
         {
           "internalType": "string",
@@ -66,42 +77,13 @@
         },
         {
           "internalType": "string",
-          "name": "nomeOperador",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "manutencoes",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "descricao",
+          "name": "operador",
           "type": "string"
         },
         {
           "internalType": "uint256",
-          "name": "data",
+          "name": "timestamp",
           "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "prioridade",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "nomeOperador",
-          "type": "string"
         }
       ],
       "stateMutability": "view",
@@ -111,26 +93,26 @@
       "inputs": [
         {
           "internalType": "string",
-          "name": "descricao",
-          "type": "string"
-        },
-        {
-          "internalType": "uint256",
-          "name": "data",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "prioridade",
+          "name": "_maquina",
           "type": "string"
         },
         {
           "internalType": "string",
-          "name": "nomeOperador",
+          "name": "_descricao",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_prioridade",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_operador",
           "type": "string"
         }
       ],
-      "name": "registrar",
+      "name": "registrarManutencao",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
