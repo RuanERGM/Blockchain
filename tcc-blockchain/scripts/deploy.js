@@ -33,7 +33,7 @@ async function main() {
   const outputPath = path.join(__dirname, "../frontend/contractData.json");
   fs.writeFileSync(outputPath, JSON.stringify(jsonData, null, 2));
 
-  console.log("📄 ABI + endereço salvos em frontend/contractData.json");
+  console.log(" ABI + endereço salvos em frontend/contractData.json");
 }
 
 main().catch((err) => {
